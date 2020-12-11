@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/RGoU.css">
+    <link href="https://fonts.googleapis.com/css?family=Fondamento&display=swap" rel="stylesheet">
+    
+    <title>Royal Game of Ur</title>
+
+<!-- Created by: 
+Norman Fong
+Massoumeh Mahaei
+Zarmeen Fancy
+Henry Zakay
+-->
+
+</head>
+<body id="body">
+    <header>
+        <h1><span>Royal Game of Ur</span></h1>
+        <nav>
+<!--The Rules: -->
+        </nav>
+    </header>
+    <main>
+         <!-- <button type="button" class="collapsible">Open Section 1</button>-->
+       <div class="collapsible">Instructions</div>
+       <div class="content">
+            <p> The Royal Game of Ur Rules:</p>
+            <p> Objective:    Win the game by moving three (3) of your pieces to the end of the board.</p>
+             <p>On Your Turn:</p>
+            <p> Player rolls the dice and moves their piece that many spaces. It wilkl also protect them from being knocked out.</p>
+            <p> If you land on a circle tile you roll again.</p>
+            <p> To move your piece to the exit you need an exact roll, anything over loses your turn.</p>
+      </div>
+      <!-- <button type="button" class="collapsible">Advice</button>-->
+        <section id ="board">
+            <div id="containerLeft" class="column">
+              <div id="leftContents">
+                <img src="../IMAGES/black-dice.jpg" id="bd" alt="black-dice" class="diceImg">
+                <br/>
+                <input type="button" class="btn" id="btnBlackRoll" value="ROLL">
+                <div id="myModalBlack" class="modal">
+
+                  <!-- Modal content-->
+                  <div class="modalBlack-content">
+                    <span class="closeBlack">&times;</span>
+                    <!--<img src="../IMAGES/black-dice.jpg"/>-->
+                    <p>White's turn!</p>
+                  </div>
+              </div>
+                </div>
+            </div>
+            <div id="containerCenter" class="column">
+                <div id="roll">ROLL: <br/>Black Start</div>
+                <div id="gameboard">
+                    <img src="../IMAGES/tile1.jpg" alt="double tile" id="04b" class="tile double">
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="05b_05w" class="tile normal">
+                    <img src="../IMAGES/tile1.jpg" alt="double tile" id="04w" class="tile double">
+                    <br>
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="03b" class="tile normal">
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="06b_06w" class="tile normal">
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="03w" class="tile normal">
+                    <br>
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="02b" class="tile normal">
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="07b_07w" class="tile normal">
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="02w" class="tile normal">
+                    <br>
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="01b" class="tile normal">
+                    <img src="../IMAGES/tile1.jpg" alt="double tile" id="08b_08w" class="tile double protected">
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="01w" class="tile normal">
+                    <br>
+                    <img src="../IMAGES/bPiece.png" alt="black start tile" id="00b" class="tile b start">
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="09b_09w" class="tile normal">
+                    <img src="../IMAGES/wPiece.png" alt="black start tile" id="00w" class="tile w start">
+                    <br>
+                    <img src="../IMAGES/tile3.jpg" alt="black end tile" id="15b" class="tile end">
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="10b_10w" class="tile normal">
+                    <img src="../IMAGES/tile3.jpg" alt="white end tile" id="15w" class="tile end">
+                    <br>
+                    <img src="../IMAGES/tile1.jpg" alt="double tile" id="14b" class="tile double">
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="11b_11w" class="tile normal">
+                    <img src="../IMAGES/tile1.jpg" alt="double tile" id="14w" class="tile double">
+                    <br>
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="13b" class="tile normal">
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="12b_12w" class="tile normal">
+                    <img src="../IMAGES/tile2.jpg" alt="tile" id="13w" class="tile normal">
+                </div>
+                <button id="restart" class="btn">RESTART</button>
+            </div>
+            <div id="containerRight" class="column">
+              <div id="rightContents">
+                <img src="../IMAGES/white-dice.jpg" id="wd" alt="white-dice" class="diceImg">
+                <br/>
+                <input type="button" class="btn" id="btnWhiteRoll" value="ROLL">
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                      <span class="close">&times;</span>
+                      <!-- <img src="../IMAGES/white-dice.jpg" />-->
+                      <p>Black's turn!</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        <div class="overlay" id="dialog-container">
+          <div class="popup">
+            <p>Do you want to play again?</p>
+            <div class="text-right">
+              <button class="dialog-btn btn-cancel" id="cancel">Cancel</button>
+              <button class="dialog-btn btn-primary" id="confirm">Yes</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="../JS/RGOU2.js"></script>
+</body>
+</html>

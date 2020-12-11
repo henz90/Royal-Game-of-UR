@@ -1,0 +1,305 @@
+@charset "UTF-8";
+
+/* Created by: 
+Norman Fong
+Massoumeh Mahaei
+Zarmeen Fancy
+Henry Zakay
+*/
+
+header {
+    margin:5% auto;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    line-height:10px;
+    background:rgb(255, 226,168);
+    border:dashed 5px maroon;
+    background-position:top 10px left 10px,top 10px right 10px;
+    background-size: 170px,170px;
+    background-repeat: no-repeat;
+    background-image: url("../IMAGES/bg-left.jpg"), url("../IMAGES/bg-right.jpg");
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, -19px -28px 7px 36px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, -19px -28px 7px 36px rgba(0,0,0,0);
+}
+h1 {
+    font-size: 50px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  h1 span {
+    font-family: 'Fondamento';
+    font-size: 1em;
+    color: maroon;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    position: relative;
+  }
+  h1 span::before,
+  h1 span::after {
+    vertical-align: middle;
+    display: inline-block;
+    content: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/squiggle.svg);
+  }
+  h1 span::after {
+    transform: scaleX(-1);
+  }
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("../IMAGES/main-bg.jpg");
+    background-repeat: repeat-y;
+    background-color: blanchedalmond;
+   
+}
+* {
+    box-sizing: border-box;
+  }
+
+.tile {
+  width: 100px;
+  height: 100px;
+  border: black 3px solid;
+}
+
+#roll {
+  font-family: 'Fondamento';
+  text-align: center;
+  padding: 2em 0 ;
+  width: 100%;
+}
+.column {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
+  min-width: 120px;
+}
+#containerCenter {
+  min-width: 350px;
+}
+#containerRight {
+  align-items: baseline;
+}
+#containerLeft{
+  align-items: flex-end;
+}
+#leftContents, #rightContents{
+  width: 150px;
+  min-width: 120px;
+}
+#board {
+  margin: 0 auto;
+  width: 100%;
+  height: 50px;
+}
+#gameBoard::after {
+  content: "";
+  clear: both; 
+}
+.diceImg {
+  border: 4px outset rgb(162, 177, 163);
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px rgb(92, 97, 84); 
+  display:flex;
+  justify-content: center;
+  width: 33%;
+  min-width: 120px;
+  min-height: 120px;
+}
+#restart {
+  margin-bottom: 5%;
+  clear: both;
+  text-align: center;
+}
+.btn {
+  text-align: center;
+  width: 80px;
+  text-shadow: 2px 2px 4px #000000;
+  margin: 1px;
+  border: grey 2px solid;
+  padding: 5px;
+  border-radius: 5%;
+  background-color: rgb(64, 62, 71);
+  color: rgba(188, 192, 204, 0.89);
+  box-shadow: black 3px 3px 4px;
+}
+.popup {
+  width: 80%;
+  padding: 15px;
+  left: 0;
+  margin-left: 5%;
+  border: 1px solid rgb(30, 38, 87);
+  border-radius: 10px;
+  color: rgb(30, 38, 87);
+  background: hsla(67, 95%, 95%, 1);
+  position: absolute;
+  top: 15%;
+  box-shadow: 5px 5px 5px #000;
+  z-index: 10001;
+  font-weight: 700;
+  text-align: center;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.85);
+  z-index: 10000;
+  display :none;
+}
+
+@media (min-width: 768px) {
+  .popup {
+    width: 66.66666666%;
+    margin-left: 16.666666%;
+  }
+}
+@media (min-width: 992px) {
+  .popup {
+    width: 80%;
+    margin-left: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .popup {
+    width: 33.33333%;
+    margin-left: 33.33333%;
+  }
+}
+
+.dialog-btn {
+  background-color:rgb(16, 133, 241);
+  color: white;
+  font-weight: 700;
+  border: 1px solid rgb(16, 133, 241);
+  border-radius: 10px;
+  height: 30px;
+  width: 30%;
+}
+.dialog-btn:hover {
+  background-color:rgb(30, 38, 87);
+  cursor: pointer;
+}
+.collapsible {
+  color: black;
+  cursor: pointer;
+  padding: 18px 0;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: whitesmoke 1px 1px 1px;
+}
+
+.active, .collapsible:hover {
+  background-color:rgb(229, 195, 167);
+}
+
+.content {
+  font-size: 20px;
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  text-align: center;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* Modal Content */
+.modal-content {
+  background-color: hsla(67, 95%, 95%, 1);
+  color: rgb(30, 38, 87);
+  margin: auto;
+  padding: 15px;
+  border: 1px solid rgb(30, 38, 87);
+  border-radius: 10px;
+  width: 50%;
+  top: 15%;
+  box-shadow: 5px 5px 5px #000;
+  z-index: 10001;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+      /* The Modal (background) */
+.modalBlack {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modalBlack-content {
+  background-color: hsla(67, 95%, 95%, 1);
+  color: rgb(30, 38, 87);
+  margin: auto;
+  padding: 15px;
+  border: 1px solid rgb(30, 38, 87);
+  border-radius: 10px;
+  width: 50%;
+  top: 15%;
+  box-shadow: 5px 5px 5px #000;
+  z-index: 10001;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* The Close Button */
+.closeBlack {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeBlack:hover,
+.closeBlack:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
